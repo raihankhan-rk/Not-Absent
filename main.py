@@ -62,7 +62,7 @@ def authenticate_submit():
             if res['password'] == password:
                 key = genKey()
                 collection.document(enrolment_no).update({'link_key': key})
-                return redirect(f'/attendance/{enrolment_no}/{key}')
+                return redirect(f'/student/attendance/{enrolment_no}/{key}')
             else:
                 return "Incorrect Password"
         else:
@@ -70,7 +70,7 @@ def authenticate_submit():
     else:
         return redirect('/attendance')
 
-@app.route('/attendance/<string:enr>/<string:key>')
+@app.route('/student/attendance/<string:enr>/<string:key>')
 def specificStudentAttendance(enr, key):
     if (collection.document(enr).get().to_dict())['link_key'] == key:
         code = genCode()
@@ -81,15 +81,15 @@ def specificStudentAttendance(enr, key):
     else:
         return "<h1>Unauthorized<h1>"
 
-@app.route('/attendance/<string:enr>/<string:key>/v', methods=['GET', 'POST'])
+@app.route('/student/attendance/<string:enr>/<string:key>/v', methods=['GET', 'POST'])
 def verifyAttendanceCode(enr, key):
     if request.method == 'POST':
         if (collection.document(enr).get().to_dict())['attendance_code'] == request.form['attendance_code']:
             db.collection('teacher').document(enr).update({'status': True})
-            return "<h1>Attendance Verified!</h1><br><p>You have been marked present.</p>"
+            return "<h1>Attendance Verified!</h1><p>You have been marked present.</p>"
         else:
             db.collection('teacher').document(enr).update({'status': False})
-            return "<h1>Attendance could not be verified!</h1><br><p>You have been marked absent.</p>"
+            return "<h1>Attendance could not be verified!</h1><p>You have been marked absent.</p>"
     else:
         return redirect(f'/attendance/{enr}/{key}')
 
