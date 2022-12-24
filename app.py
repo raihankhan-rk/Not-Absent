@@ -2,10 +2,17 @@ from flask import Flask, render_template, request, redirect
 import firebase_admin
 from firebase_admin import credentials, firestore
 from functionHandler import genKey, genCode
+from twilio.rest import Client
+from dotenv import load_dotenv
+import os
 
 
 app = Flask(__name__)
+load_dotenv()
 
+account_sid = os.getenv('TWILIO_ACCOUNT_SID')
+auth_token = os.getenv('TWILIO_AUTH_TOKEN')
+client = Client(account_sid, auth_token)
 
 cred = credentials.Certificate("creds.json")
 firebase_admin.initialize_app(cred)
@@ -40,6 +47,12 @@ def addStudent_submit():
         #send the password to the phone no.
         collection.document(enrolment_no).set({'password': password, 'attendance_code': "", 'link_key': "", 'phone': f'+91{phone}'})
         db.collection('teacher').document(enrolment_no).set({'enr': enrolment_no, 'name': name, 'stream': stream, 'status': False, 'phone': f'+91{phone}'})
+        # message = client.messages.create(
+        #     body=f"You have been added to a classroom by your teacher. Your Enrolment No. is {enrolment_no} and your Password is {password}. You can give your attendance here at this link - ",
+        #     from_="+13149882661",
+        #     to=f"+91{phone}"
+        # )
+        # print(message.sid)
         return redirect('/teacher/dashboard')
     else:
         return redirect('/teacher/add-student')
@@ -74,7 +87,12 @@ def authenticate_submit():
 def specificStudentAttendance(enr, key):
     if (collection.document(enr).get().to_dict())['link_key'] == key:
         code = genCode()
-        #send code to the user's phone no.
+        # message = client.messages.create(
+        #     body=f"Your Attendance Code for this class is {code}",
+        #     from_="+13149882661",
+        #     to=collection.document(enr).get().to_dict()['phone']
+        # )
+        # print(message.sid)
         print(code)
         collection.document(enr).update({'attendance_code': code})
         return render_template("attendanceCode.html", enr=enr, key=key)
