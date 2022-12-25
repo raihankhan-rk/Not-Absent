@@ -16,6 +16,7 @@ client = Client(account_sid, auth_token)
 
 cred = credentials.Certificate(os.getenv('FIREBASE_KEY'))
 firebase_admin.initialize_app(cred)
+#test
 
 db = firestore.client()
 collection = db.collection('attendance')
