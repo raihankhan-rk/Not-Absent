@@ -14,7 +14,7 @@ account_sid = os.getenv('TWILIO_ACCOUNT_SID')
 auth_token = os.getenv('TWILIO_AUTH_TOKEN')
 client = Client(account_sid, auth_token)
 
-cred = credentials.Certificate("creds.json")
+cred = credentials.Certificate(os.getenv('FIREBASE_SERVICE_ACCOUNT_KEY'))
 firebase_admin.initialize_app(cred)
 
 db = firestore.client()
