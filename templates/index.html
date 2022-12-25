@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,900&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='fonts/icomoon/style.css') }}">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  <title>Not Absent</title>
+</head>
+
+<body>
+
+
+
+
+
+  <div class="container content">
+    <div class="row align-items-center content">
+
+      <div class="overlay">
+        <h1>I am <i>'Not Absent'</i></h1>
+        <h4><em>Not Absent </em>is a method of taking attendance digitally.</h4>
+        <div>
+          <button type="button" class="btn-l btn-secondary px-4 py-3" data-toggle="modal" data-target="#exampleModalCenter">
+            Learn More
+          </button>
+        </div>
+        <button onclick="location.href='http://127.0.0.1:5000/student/attendance'" class="fancy-button">Give
+          Attendance</button>
+        <button onclick="location.href='http://127.0.0.1:5000/teacher/dashboard'" class="fancy-button">Teacher's
+          Dashboard</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-md  modal-dialog-centered" role="document">
+      <div class="modal-content rounded-0">
+        <div class="modal-body py-0">
+
+
+          <div class="d-block main-content">
+            <img src="https://edumeet.in/wp-content/uploads/2020/09/lms-im1.jpg" alt="Image" class="img-fluid" style="background-color: #b2fcff;">
+            <div class="content-text p-4">
+
+              <h3 class="mb-4">Introducing <em>Not Absent</em></h3>
+              <p class="mb-4">Currently in schools we have manual attendance tracking, which is a quite tedious process
+                and requires manual labour. With Not Absent, we don't just cut down the manual labour part, but our
+                advanced algorithm also ensures that no student gives proxy attendance on behalf of any other student,
+                making the attendance tracking process smooth and convenient for both, teachers as well as students, and
+                ultimately saving time as well.<br><br>
+                🔰 When a student enters their credential to give their attendance, they are redirected to a <b>unique link</b> and an <b>exam code</b> is sent to them via <b>SMS</b>. They must enter the exam code on that page to get their attendance.
+              </p>
+              <div class="d-flex">
+                <div class="ml-auto">
+                  <a href="#" class="btn-g btn-primary px-4" data-dismiss="modal">Gotcha</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

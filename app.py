@@ -23,9 +23,7 @@ collection = db.collection('attendance')
 
 @app.route("/")
 def home():
-    res = collection.document('12021002020007').get().to_dict()
-    print(res)
-    return res
+    return render_template("index.html")
 
 
 @app.route('/teacher/dashboard')
@@ -49,7 +47,7 @@ def addStudent_submit():
         db.collection('teacher').document(enrolment_no).set({'enr': enrolment_no, 'name': name, 'stream': stream, 'status': False, 'phone': f'+91{phone}'})
         # message = client.messages.create(
         #     body=f"You have been added to a classroom by your teacher. Your Enrolment No. is {enrolment_no} and your Password is {password}. You can give your attendance here at this link - ",
-        #     from_="+13149882661",
+        #     from_=os.getenv('MY_TWILIO_PHONE_NO'),
         #     to=f"+91{phone}"
         # )
         # print(message.sid)
@@ -89,7 +87,7 @@ def specificStudentAttendance(enr, key):
         code = genCode()
         # message = client.messages.create(
         #     body=f"Your Attendance Code for this class is {code}",
-        #     from_="+13149882661",
+        #     from_=os.getenv('MY_TWILIO_PHONE_NO'),
         #     to=collection.document(enr).get().to_dict()['phone']
         # )
         # print(message.sid)

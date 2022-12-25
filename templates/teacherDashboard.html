@@ -14,6 +14,7 @@
 <h1 class="heading">Dashboard</h1>
 <div class="table-box">
     <table cellspacing="0" border="0">
+        <p>This Dashboard is not protected by any authentication. It has been made public for demonstration purpose.</p>
         <tr>
             <th>Enrolment No.</th>
             <th>Name</th>
@@ -26,9 +27,9 @@
             <td>{{student[0]['name']}}</td>
             <td>{{student[0]['phone']}}</td>
             {% if student[0]['status'] %}
-            <td>Present</td>
+            <td style="color: green;">Present</td>
             {% else %}
-            <td>Absent</td>
+            <td style="color: red;">Absent</td>
             {% endif %}
         </tr>
         {% endfor %}
@@ -44,6 +45,9 @@
 html {
   height: 100%;
 }
+p{
+color: grey;
+}
 
 body{
     margin:0px;
@@ -58,7 +62,7 @@ body{
   top: 50%;
   left: 50%;
   width: auto;
-  padding: 40px;
+  padding: 20px;
   transform: translate(-50%, -50%);
   background: rgba(0,0,0,.5);
   box-sizing: border-box;
@@ -93,7 +97,7 @@ td{
 
 
 th{
-    padding: 21px;
+    padding: 10px;
     font-family: 'Montserrat';
     color: black;
     font-size: 1.2vw;

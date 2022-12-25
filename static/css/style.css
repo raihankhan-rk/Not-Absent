@@ -1,0 +1,202 @@
+body {
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  background-image: linear-gradient(to bottom, rgba(0, 3, 95, 0.485), rgba(0, 0, 0, 0.4)), url('https://www.gradelink.com/wp-content/uploads/2016/03/DigitalAttendance2.jpg');
+  background-size: cover;
+  color: white;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+}
+
+p {
+  color: #b3b3b3;
+  font-weight: 300;
+  font-size: 18px;
+  /* font-weight: 500; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 900;
+}
+
+a {
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease;
+}
+
+a,
+a:hover {
+  text-decoration: none !important;
+}
+
+.fancy-button {
+  background-color: rgb(104, 169, 255);
+  color: white;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.fancy-button:hover {
+  background-color: rgb(31, 124, 246);
+}
+
+.content {
+  height: 100vh;
+}
+
+.modal {
+  border-radius: 7px;
+  overflow: hidden;
+  background-color: transparent;
+  font-family: "Poppins", sans-serif;
+}
+
+.modal .logo a img {
+  width: 30px;
+}
+
+.modal .modal-content {
+  background-color: transparent;
+  border: none;
+  border-radius: 7px;
+}
+
+.modal .modal-content .modal-body {
+  border-radius: 7px;
+  overflow: hidden;
+  background-color: #fff;
+  padding-left: 0px;
+  padding-right: 0px;
+  -webkit-box-shadow: 0 10px 50px -10px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 10px 50px -10px rgba(0, 0, 0, 0.9);
+}
+
+.modal .modal-content .modal-body h2 {
+  font-size: 18px;
+}
+
+.modal .modal-content .modal-body p {
+  color: #777;
+  font-size: 14px;
+}
+
+.modal .modal-content .modal-body h3 {
+  font-weight: 900;
+  color: #000;
+  font-size: 22px;
+}
+
+.modal .modal-content .modal-body .close-btn {
+  color: #000;
+}
+
+.modal .modal-content .modal-body .promo-img {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+}
+
+.modal .cancel {
+  color: gray;
+  font-size: 14px;
+}
+
+.modal .btn-primary {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.form-control {
+  border: transparent;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
+.form-control:active,
+.form-control:focus,
+.form-control:hover {
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.btn-l {
+  border-radius: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: none;
+  background-color: #000;
+  font-size: 16px;
+}
+
+.btn-g {
+  border-radius: 50px;
+  border: none;
+}
+
+.btn:active,
+.btn:focus {
+  outline: none;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.custom-select {
+  border: none;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.custom-select:active,
+.custom-select:focus,
+.custom-select:hover {
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.bg-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.logo img {
+  width: 70px;
+}
+
+.custom-note {
+  color: #999;
+}
+
+.custom-note a {
+  color: #555;
+  font-weight: 900 !important;
+}
